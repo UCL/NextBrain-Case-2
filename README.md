@@ -15,7 +15,7 @@ The struture of the dataset is as follows:
   
 ### Histology
 
-This directory contains data on the histology space at 0.1mm in-plane resolution. This resolution has been used in the 3D histology reconstruction pipeline. 
+This directory (_histology_) contains data on the histology space at 0.1 mm in-plane resolution. The spacing between histology slices is either 250 μm for blocks that included subcortical structures in the forebrain, medial structures of the cerebellum and brainstem structures or 500 μm for the other blocks. This resolution has been used in the 3D histology reconstruction pipeline. 
 For each block, we provide the following data:
  - __slices_LFB__: histology slices stained using LFB and non-linearly aligned to the corresponding MRI section (.jpg extension).
  - __slices_HE__: histology slices stained using HE and non-linearly aligned to the corresponding MRI section (.jpg extension).
@@ -28,7 +28,7 @@ For each block, we provide the following data:
   
 ### High-resolution histology
 
-This directory contains data on the histology space at 1.9844um in-plane resolution. 
+This directory (_histology_hr_) contains data on the histology space at 1.9844 μm in-plane resolution. The spacing between histology slices is either 250 μm for blocks that included subcortical structures in the forebrain, medial structures of the cerebellum and brainstem structures or 500 μm for the other blocks.
 For each block, we provide the following data:
  - __slices_LFB__: histology slices stained using LFB and non-linearly aligned to the corresponding MRI section (.jpg extension).
  - __slices_HE__: histology slices stained using HE and non-linearly aligned to the corresponding MRI section (.jpg extension).
@@ -41,12 +41,14 @@ For each block, we provide the following data:
 <div id='mri_rotated'/>
   
 ### MRI
+This directory (_mri_rotated_) contains data on the MRI space. We use a T2-weighted sequence at 400 μm isotropic resolution with the following parameters: R = 500 ms, TEeff = 69 ms, BW = 558 Hz/Px, echo spacing = 4.96 ms, echo train length = 58, 10 averages, acquisition time for each average = 547 s.
 
+The data in this directory consists of:
 - __mri.nii.gz__: MRI scan.
-- __indices.nii.gz__: volume containing the 3D version of the corresponding block to each voxel on the MRI scan.
-- __slices\_{axial/sagittal/coronal}__: MRI slices in each direction on the MRI space.  (.png extension)
-- __indices\_{axial/sagittal/coronal}__: 2D integer image containing the block number corresponding to each voxel on the MRI slice  (.npy extension)
-- __matrices{/_hr}__: affine matrices that relate the MRI image with each block.
+- __slices\_{axial/sagittal/coronal}__: orthogonal views of the 3D MRI volume (.png extension);
+- __indices.nii.gz__: volume containing the the corresponding block number of each voxel on the MRI scan.
+- __indices\_{axial/sagittal/coronal}__: 2D integer image containing the block number corresponding to each voxel on the MRI slice (.npy extension);
+- __matrices{/_hr}__: affine matrices that relate the MRI volume with each block on the histology space for both resolutions. Each of these matrices is the inverse of the matrices found in the histology directories.
 
 
 <div id='utils'/>
