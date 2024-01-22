@@ -1,5 +1,5 @@
 # NextBrain - Case 2
-This repository contains data that is consumed by the [NextBrain project](https://github.com/UCL/NextBrain). This data corresponds to patient P41-16. For the source code of this project refer to the main [NextBrain repo](https://github.com/UCL/NextBrain).
+This repository contains data that is consumed by the [NextBrain project](https://github.com/UCL/NextBrain). This data corresponds to case 2. For the source code of this project refer to the main [NextBrain repo](https://github.com/UCL/NextBrain).
 
 ## Data structure
 This brain specimen has been cut into 41 blocks including cerebrum, cerebellum and brain stem. The histology-related data is organised following a numbered list of blocks, from 1 to 41. 
